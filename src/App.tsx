@@ -2,6 +2,7 @@ import { useState } from "react";
 import FetchData from "./FetchData";
 import UpdateList from "./UpdateList";
 import SignUpForm from "./SignUpForm";
+import LogIn from "./LogIn";
 
 function App() {
   const [showComponent, setShowComponent] = useState(false);
@@ -24,6 +25,7 @@ function App() {
       <button onClick={handleClick}>My Tasks</button>
       {showComponent && <FetchData />}
       <SignUpForm />
+      <LogIn />
     </div>
    
   );

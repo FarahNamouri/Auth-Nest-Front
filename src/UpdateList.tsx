@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-
+import { Button, ButtonGroup } from '@chakra-ui/react';
 enum Category {
   SPORTS = "Sports",
   FOOD = "Food",
@@ -75,9 +75,9 @@ const UpdateList: React.FC<Props> = ({ id, initialList }) => {
         value={list.duration}
         onChange={handleInputChange}
       />
-      <button type="submit">
+      <Button colorScheme='blue' type="submit">
         update
-      </button>
+      </Button>
     </form>
   );
 };

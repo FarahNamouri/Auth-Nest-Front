@@ -3,7 +3,9 @@ import FetchData from "./FetchData";
 import UpdateList from "./UpdateList";
 import SignUpForm from "./SignUpForm";
 import LogIn from "./LogIn";
-
+import { Button } from '@chakra-ui/react';
+import { Box } from "@chakra-ui/react"
+import CreateListForm from "./CreateList";
 function App() {
   const [showComponent, setShowComponent] = useState(false);
   const handleClick = () => {
@@ -12,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <UpdateList
+      {/* <UpdateList
         id={"list_id"}
         initialList={{
           id: "list_id",
@@ -21,11 +23,14 @@ function App() {
           person: "Alma",
           duration: "2 hours",
         }}
-      />
-      <button onClick={handleClick}>My Tasks</button>
+      /> */}
+      <Box  m={2}>
+      <Button colorScheme='blue' onClick={handleClick}>My Tasks</Button>
       {showComponent && <FetchData />}
       <SignUpForm />
       <LogIn />
+      <CreateListForm />
+      </Box>
     </div>
    
   );

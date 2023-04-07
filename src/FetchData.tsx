@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { ListContext } from "./ListContext";
 
 enum Category {
   SPORTS = "Sports",
@@ -11,7 +12,7 @@ enum Category {
   SELFCARE = "Self care",
 }
 
-interface List {
+export interface List {
   _id: string;
   name: string;
   description: string;
@@ -22,6 +23,7 @@ interface List {
 
 const FetchData = () => {
   const [lists, setLists] = useState<List[]>([]);
+  const { lists: contextLists } = useContext(ListContext);
   // Fetch my tasks from the backend :
   useEffect(() => {
     const fetchData = async () => {
@@ -33,13 +35,12 @@ const FetchData = () => {
 
   return (
     <div>
-      {lists.map((list) => (
+      {contextLists.map((list) => (
         <div key={list._id}>
           <Box w="100%" p={4} m={2} borderWidth="1px" borderRadius="lg">
             <h1>{list._id}</h1>
             <h1>{list.name}</h1>
             <p>{list.description}</p>
-            <p>{list.category}</p>
           </Box>
         </div>
       ))}

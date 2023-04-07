@@ -5,7 +5,7 @@ import SignUpForm from "./SignUpForm";
 import LogIn from "./LogIn";
 import { Button } from '@chakra-ui/react';
 import { Box } from "@chakra-ui/react"
-import CreateListForm from "./CreateList";
+import CreateList from "./CreateList";
 function App() {
   const [showComponent, setShowComponent] = useState(false);
   const handleClick = () => {
@@ -29,7 +29,7 @@ function App() {
       {showComponent && <FetchData />}
       <SignUpForm />
       <LogIn />
-      <CreateListForm />
+      <CreateList />
       </Box>
     </div>
    
